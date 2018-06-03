@@ -41,8 +41,10 @@ public class HandleUrl {
 	        Element urlEle = doc.select("url").first();
 	        Element dateEle = doc.select("startdate").first();
 	        String refer = urlEle.text();
+	        refer = refer.replaceAll("1366x768", "1920x1080");
 	        String date = dateEle.text();
 	        String filename = refer.substring(refer.lastIndexOf("/")+1, refer.length());
+	        
 	        String newUrl = "http://cn.bing.com"+refer;
 	        System.out.println("地址:"+newUrl);
 	        
@@ -70,7 +72,7 @@ public class HandleUrl {
 	            output.write(buffer, 0, length);  
 	        }
 	        fileOutputStream.write(output.toByteArray());
-	        System.out.println("保存成功<--->"+filename+"<--->"+filepath);
+	        System.out.println("保存成功<--->"+filename+"<--->"+img.getAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
