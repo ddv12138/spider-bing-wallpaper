@@ -44,7 +44,7 @@ public class HandleUrl {
 	        String date = dateEle.text();
 	        String filename = refer.substring(refer.lastIndexOf("/")+1, refer.length());
 	        String newUrl = "http://cn.bing.com"+refer;
-	        System.out.println("地址："+newUrl);
+	        System.out.println("地址:"+newUrl);
 	        
 	        url = new URL(newUrl);
 	        urlconn = url.openConnection();
